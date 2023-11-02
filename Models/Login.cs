@@ -1,9 +1,11 @@
-﻿namespace BTrack.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BTrack.Models
 
 {    
     public class Login
     {
-        public string username { get; set; }
+        [Key] public string username { get; set; }
         public string password { get; set; }
     }
 }

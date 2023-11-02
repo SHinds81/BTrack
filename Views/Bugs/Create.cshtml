@@ -1,0 +1,48 @@
+﻿@model BTrack.Models.Bugs
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bugs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="bugStatus" class="control-label"></label>
+                <input asp-for="bugStatus" class="form-control" />
+                <span asp-validation-for="bugStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bugTitle" class="control-label"></label>
+                <input asp-for="bugTitle" class="form-control" />
+                <span asp-validation-for="bugTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bugDescription" class="control-label"></label>
+                <input asp-for="bugDescription" class="form-control" />
+                <span asp-validation-for="bugDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="bugPriority" class="control-label"></label>
+                <input asp-for="bugPriority" class="form-control" />
+                <span asp-validation-for="bugPriority" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

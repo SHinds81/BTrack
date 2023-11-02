@@ -1,9 +1,11 @@
-﻿namespace BTrack.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BTrack.Models
 
 {
     public class Account
     {
-        public int accountId {  get; set; }
+        [Key] public int accountId {  get; set; }
         public string accountName { get; set; }
         public string username { get; set; }
     }

@@ -1,0 +1,43 @@
+﻿@model BTrack.Models.Update
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Update</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="accountId" class="control-label"></label>
+                <input asp-for="accountId" class="form-control" />
+                <span asp-validation-for="accountId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updateDate" class="control-label"></label>
+                <input asp-for="updateDate" class="form-control" />
+                <span asp-validation-for="updateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="updateDetails" class="control-label"></label>
+                <input asp-for="updateDetails" class="form-control" />
+                <span asp-validation-for="updateDetails" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
