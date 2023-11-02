@@ -15,6 +15,7 @@ public static class SeedData
                 DbContextOptions<BTrackContext>>()))
         {
             
+            /*
             // Look for any logins.
             if (context.Login.Any())
             {
@@ -34,8 +35,8 @@ public static class SeedData
                 new Login { username = "jessica_taylor", password = "jt123456"}
             );
 
-            context.SaveChanges();
-
+            //context.SaveChanges();
+            
             // Look for any accounts.
             if (context.Account.Any())
             {
@@ -43,18 +44,19 @@ public static class SeedData
             }
 
             context.Account.AddRange(
-                new Account { accountId = 101, accountName = "John Doe", username = "john_doe"},
-                new Account { accountId = 102, accountName = "Jane Smith", username = "jane_smith"},
-                new Account { accountId = 103, accountName = "Bob Johnson", username = "bob_johnson"},
-                new Account { accountId = 104, accountName = "Alice Williams", username = "alice_williams"},
-                new Account { accountId = 105, accountName = "Charlie Brown", username = "charlie_brown"},
-                new Account { accountId = 106, accountName = "Emily Davis", username = "emily_davis"},
-                new Account { accountId = 107, accountName = "Michael Miller", username = "michael_miller"},
-                new Account { accountId = 108, accountName = "Sarah Wilson", username = "sarah_wilson"},
-                new Account { accountId = 109, accountName = "James Moore", username = "james_moore"},
-                new Account { accountId = 110, accountName = "Jessica Taylor", username = "jessica_taylor"}
+                new Account { accountName = "John Doe", username = "john_doe" },
+                new Account { accountName = "Jane Smith", username = "jane_smith" },
+                new Account { accountName = "Bob Johnson", username = "bob_johnson" },
+                new Account { accountName = "Alice Williams", username = "alice_williams" },
+                new Account { accountName = "Charlie Brown", username = "charlie_brown" },
+                new Account { accountName = "Emily Davis", username = "emily_davis" },
+                new Account { accountName = "Michael Miller", username = "michael_miller" },
+                new Account { accountName = "Sarah Wilson", username = "sarah_wilson" },
+                new Account { accountName = "James Moore", username = "james_moore" },
+                new Account { accountName = "Jessica Taylor", username = "jessica_taylor" }
             );
             context.SaveChanges();
+            */
 
             // Look for any bugs.
             if (context.Bugs.Any())
@@ -93,7 +95,6 @@ public static class SeedData
             }
 
             context.Update.AddRange(
-
                 new Update { bugId = 1001, accountId = 101, updateDate = DateTime.Parse("2023-09-04"), updateDetails = "Bug entered in system" },
                 new Update { bugId = 1002, accountId = 102, updateDate = DateTime.Parse("2023-09-03"), updateDetails = "Bug entered in system" },
                 new Update { bugId = 1003, accountId = 103, updateDate = DateTime.Parse("2023-09-02"), updateDetails = "Bug entered in system" },
@@ -171,9 +172,7 @@ public static class SeedData
                 new Update { bugId = 1005, accountId = 105, updateDate = DateTime.Parse("2023-11-14"), updateDetails = "Bug closed in system" },
                 new Update { bugId = 1019, accountId = 108, updateDate = DateTime.Parse("2023-11-13"), updateDetails = "Bug closed in system" }
             );
-
-
-            context.SaveChanges();
+            //context.SaveChanges();
             
         }
     }
