@@ -14,6 +14,7 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<BTrackContext>>()))
         {
+            
             // Look for any logins.
             if (context.Login.Any())
             {
@@ -33,6 +34,8 @@ public static class SeedData
                 new Login { username = "jessica_taylor", password = "jt123456"}
             );
 
+            context.SaveChanges();
+
             // Look for any accounts.
             if (context.Account.Any())
             {
@@ -51,7 +54,7 @@ public static class SeedData
                 new Account { accountId = 109, accountName = "James Moore", username = "james_moore"},
                 new Account { accountId = 110, accountName = "Jessica Taylor", username = "jessica_taylor"}
             );
-
+            context.SaveChanges();
 
             // Look for any bugs.
             if (context.Bugs.Any())
@@ -81,6 +84,7 @@ public static class SeedData
                 new Bugs { bugId = 1019, bugStatus = 1, bugTitle = "User Interface Improvement", bugDescription = "The user interface needs to be updated for better accessibility.", bugPriority = 2},
                 new Bugs { bugId = 1020, bugStatus = 2, bugTitle = "Data Loss Bug", bugDescription = "A bug causing data loss when updating user profiles.", bugPriority = 3}
             );
+            context.SaveChanges();
 
 
             if (context.Update.Any())
