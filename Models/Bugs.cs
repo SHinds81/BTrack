@@ -1,6 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace BTrack.Models
 
-namespace BTrack.Models
 {
     public class Bugs
     {
