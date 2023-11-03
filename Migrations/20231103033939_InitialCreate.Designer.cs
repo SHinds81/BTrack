@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BTrack.Migrations
 {
     [DbContext(typeof(BTrackContext))]
-    [Migration("20231102064047_InitialCreate")]
+    [Migration("20231103033939_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -89,13 +89,16 @@ namespace BTrack.Migrations
 
             modelBuilder.Entity("BTrack.Models.Update", b =>
                 {
-                    b.Property<int>("bugId")
+                    b.Property<int>("updateId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("bugId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("updateId"));
 
                     b.Property<int>("accountId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("bugId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("updateDate")
@@ -105,7 +108,7 @@ namespace BTrack.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("bugId");
+                    b.HasKey("updateId");
 
                     b.ToTable("Update");
                 });

@@ -57,15 +57,16 @@ namespace BTrack.Migrations
                 name: "Update",
                 columns: table => new
                 {
-                    bugId = table.Column<int>(type: "int", nullable: false)
+                    updateId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    bugId = table.Column<int>(type: "int", nullable: false),
                     accountId = table.Column<int>(type: "int", nullable: false),
                     updateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updateDetails = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Update", x => x.bugId);
+                    table.PrimaryKey("PK_Update", x => x.updateId);
                 });
         }
 
