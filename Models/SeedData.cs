@@ -14,7 +14,7 @@ public static class SeedData
             serviceProvider.GetRequiredService<
                 DbContextOptions<BTrackContext>>()))
         {
-            /*
+            
             // Look for any logins.
             if (context.Login.Any())
             {
@@ -34,7 +34,7 @@ public static class SeedData
                 new Login { username = "jessica_taylor", password = "jt123456"}
             );
 
-            //context.SaveChanges();
+            context.SaveChanges();
             
             // Look for any accounts.
             if (context.Account.Any())
@@ -54,9 +54,9 @@ public static class SeedData
                 new Account { accountName = "James Moore", username = "james_moore" },
                 new Account { accountName = "Jessica Taylor", username = "jessica_taylor" }
             );
-            //context.SaveChanges();
+            context.SaveChanges();
             
-            */
+            
             // Look for any bugs.
             if (context.Bugs.Any())
             {

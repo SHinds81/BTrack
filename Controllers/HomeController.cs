@@ -8,6 +8,8 @@ namespace BTrack.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        string testString = "Teststring";
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -15,6 +17,7 @@ namespace BTrack.Controllers
 
         public IActionResult Index()
         {
+            ViewData["TestDisplay"] = testString;
             return View();
         }
 
