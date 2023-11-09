@@ -26,8 +26,6 @@ namespace BTrack.Controllers
 
         public IActionResult Index()
         {
-            
-            //var recordCount = ctx.Cases.Count(a => a.Role == "admin");
             var bugStatus1Total = _context.Bugs.Count(a => a.bugStatus == 1);
             var bugStatus2Total = _context.Bugs.Count(a => a.bugStatus == 2);
             var bugStatus3Total = _context.Bugs.Count(a => a.bugStatus == 3);
