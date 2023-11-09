@@ -31,10 +31,13 @@ namespace BTrack.Controllers
             var bugStatus1Total = _context.Bugs.Count(a => a.bugStatus == 1);
             var bugStatus2Total = _context.Bugs.Count(a => a.bugStatus == 2);
             var bugStatus3Total = _context.Bugs.Count(a => a.bugStatus == 3);
+            var bugStatus4Total = _context.Bugs.Distinct();
+            
 
             ViewData["bugStatus1Total"] = bugStatus1Total;
             ViewData["bugStatus2Total"] = bugStatus2Total;
             ViewData["bugStatus3Total"] = bugStatus3Total;
+            ViewData["bugStatus4Total"] = bugStatus4Total;
 
 
             ViewData["TestDisplay"] = testString;
