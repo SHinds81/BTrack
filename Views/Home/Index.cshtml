@@ -3,8 +3,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 }
 
-
-
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>TEST HERE: @ViewData["TestDisplay"]</p>
@@ -17,24 +15,30 @@
   
 </div>
 
-<div>
+<style>
+    div.statusChart {
+        width: 500px;
+        margin: auto;
+    }
+</style>
+
+<div class="statusChart">
     <canvas id="statusChart"></canvas>
 </div>
 
 <script>
     const ctx = document.getElementById('statusChart');
-
-    /*
+    
     new Chart(ctx, {
         type: 'doughnut',
-        const data = {
+        data: {
             labels: [
                 'Open',
                 'In Progress',
                 'Closed'
             ],
             datasets: [{
-                label: 'Bug Status Overview',
+                label: 'Bugs',
                 data: [@ViewData["bugStatus1Total"], @ViewData["bugStatus2Total"], @ViewData["bugStatus3Total"]],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
@@ -43,26 +47,6 @@
                 ],
                 hoverOffset: 4
             }]
-        }
-    });
-    */
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow'],
-            datasets: [{
-                label: '# of Votes',
-                data: [@ViewData["bugStatus1Total"], @ViewData["bugStatus2Total"], @ViewData["bugStatus3Total"]],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
         }
     });
 
