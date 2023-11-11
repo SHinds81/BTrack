@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "B Track";
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 }
+
 
 
 <div class="text-center">
@@ -12,8 +14,56 @@
     <p>Status 3 Test: @ViewData["bugStatus3Total"]</p>
     <p>Total Test: @ViewData["bugStatus4Total"]</p>
 
-    
+  
 </div>
 
+<div>
+    <canvas id="statusChart"></canvas>
+</div>
 
+<script>
+    const ctx = document.getElementById('statusChart');
 
+    /*
+    new Chart(ctx, {
+        type: 'doughnut',
+        const data = {
+            labels: [
+                'Open',
+                'In Progress',
+                'Closed'
+            ],
+            datasets: [{
+                label: 'Bug Status Overview',
+                data: [@ViewData["bugStatus1Total"], @ViewData["bugStatus2Total"], @ViewData["bugStatus3Total"]],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        }
+    });
+    */
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow'],
+            datasets: [{
+                label: '# of Votes',
+                data: [@ViewData["bugStatus1Total"], @ViewData["bugStatus2Total"], @ViewData["bugStatus3Total"]],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
