@@ -1,0 +1,8 @@
+﻿.top-nav-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 15px;
+    text-align: center;
+    align-items: center;
+}
